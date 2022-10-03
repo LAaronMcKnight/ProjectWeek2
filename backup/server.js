@@ -193,6 +193,38 @@ app.post('/misc', (req, res) => {
   res.redirect("/misc")
 })
 
+//------------
+
+app.delete("/movies/:id", (req, res) => {
+  Movie.findByIdAndRemove(req.params.id, (err) => {
+      console.log(err)
+      res.redirect("/movies")
+  })
+})
+app.delete("/games/:id", (req, res) => {
+  Game.findByIdAndRemove(req.params.id, (err) => {
+      console.log(err)
+      res.redirect("/games")
+  })
+})
+app.delete("/cards/:id", (req, res) => {
+  Card.findByIdAndRemove(req.params.id, (err) => {
+      console.log(err)
+      res.redirect("/cards")
+  })
+})
+app.delete("/comics/:id", (req, res) => {
+  Comic.findByIdAndRemove(req.params.id, (err) => {
+      console.log(err)
+      res.redirect("/comics")
+  })
+})
+app.delete("/misc/:id", (req, res) => {
+  Misc.findByIdAndRemove(req.params.id, (err) => {
+      console.log(err)
+      res.redirect("/misc")
+  })
+})
 
 
 

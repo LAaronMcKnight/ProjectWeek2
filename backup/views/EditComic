@@ -1,6 +1,6 @@
 const React = require('react')
 
-class EditMovie extends React.Component {
+class EditComic extends React.Component {
     render() {
         return (
             <div className="indexPage">
@@ -13,10 +13,10 @@ class EditMovie extends React.Component {
                 </div>
                 <div className="body">
                     <div className="bodyMain">
-                    <form action={`/movies/${this.props.movie._id}?_method=PUT`} method="POST">
-                        Title:  <input defaultValue={this.props.movie.name} type="text" name="name" required />
+                    <form action={`/comics/${this.props.game._id}?_method=PUT`} method="POST">
+                        Title:  <input defaultValue={this.props.game.name} type="text" name="name" required />
                         <br />
-                        Condition: <select defaultValue={this.props.movie.condition} name="condition">
+                        Condition: <select defaultValue={this.props.game.condition} name="condition">
                             <option value="New">New</option>
                             <option value="Like New">Like New</option>
                             <option value="Good">Good</option>
@@ -24,18 +24,18 @@ class EditMovie extends React.Component {
                             <option value="Poor">Poor</option>
                         </select>
                         <br />
-                        Price: <input defaultValue={this.props.movie.price} type="text" name="price" required />
+                        Price: <input defaultValue={this.props.game.price} type="text" name="price" required />
                         <br />
-                        Negotiable?: {this.props.movie.negotiable ? (
+                        Negotiable?: {this.props.game.negotiable ? (
                             <input type="checkbox" name="negotiable" defaultChecked />) : (
                                 <input type="checkbox" name="negotiable" />
                             )}
                         
                         <br />
-                        Description: <input type="textarea" defaultValue={this.props.movie.description} name="description" required />
+                        Description: <input type="textarea" defaultValue={this.props.game.description} name="description" required />
                         <br />
-                        Image: <input type="text" defaultValue={this.props.movie.image} name="image" />
-                        <input type="submit" value="Submit Movie"></input>
+                        Image: <input type="text" defaultValue={this.props.game.image} name="image" />
+                        <input type="submit" value="Submit Game"></input>
                     </form>
                     </div>
                     <div className="bodyExtra">
@@ -49,4 +49,4 @@ class EditMovie extends React.Component {
     }
 }
 
-module.exports = EditMovie
+module.exports = EditComic
